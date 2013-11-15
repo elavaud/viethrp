@@ -494,11 +494,14 @@ class SubmissionEditHandler extends SectionEditorHandler {
 			case SUBMISSION_EDITOR_DECISION_DECLINE:
 			case SUBMISSION_EDITOR_DECISION_EXEMPTED:
 				SubmissionCommentsHandler::emailEditorDecisionComment($articleId);
-				break;			
+				break;
+                        default:
+                                if ($decision == SUBMISSION_EDITOR_DECISION_COMPLETE && $technicalReview == 1) Request::redirect(null, null, 'selectReviewer', $articleId);
+                                else Request::redirect(null, null, 'submissionReview', $articleId);
+                                break;
+
 		}
 		
-		if ($decision == SUBMISSION_EDITOR_DECISION_COMPLETE && $technicalReview == 1) Request::redirect(null, null, 'selectReviewer', $articleId);
-		else Request::redirect(null, null, 'submissionReview', $articleId);
 	}
 	
 	/**
@@ -572,7 +575,8 @@ class SubmissionEditHandler extends SectionEditorHandler {
 			
 		if ($reviewerId > 0) {
 			// Assign reviewer to article
-						if ($previousDecision['technicalReview'] == '1' && $previousDecision['decision'] == SUBMISSION_EDITOR_DECISION_COMPLETE) SectionEditorAction::addReviewer($submission, $reviewerId, null, true);
+			
+			if ($previousDecision['technicalReview'] == '1' && $previousDecision['decision'] == SUBMISSION_EDITOR_DECISION_COMPLETE) SectionEditorAction::addReviewer($submission, $reviewerId, null, true);
 			else SectionEditorAction::addReviewer($submission, $reviewerId);
 			
 			//Notify reviewer and send email by default

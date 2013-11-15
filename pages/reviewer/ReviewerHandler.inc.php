@@ -50,7 +50,6 @@ class ReviewerHandler extends Handler {
 		$toDate = Request::getUserDateVar('dateTo', 32, 12, null, 23, 59, 59);
 		if ($toDate !== null) $toDate = date('Y-m-d H:i:s', $toDate);
 		
-		$technicalUnitField = Request::getUserVar('technicalUnitField');
 		$countryField = Request::getUserVar('countryField');
 		
 		$journal =& Request::getJournal();
@@ -76,7 +75,7 @@ class ReviewerHandler extends Handler {
 		
 		if ($sort == 'decision') {		
 			$submissions = $reviewerSubmissionDao->getReviewerSubmissionsByReviewerId($user->getId(), $journal->getId(), $active,  $searchField, $searchMatch, $search, $dateSearchField, $fromDate, $toDate, 
-											  $technicalUnitField, $countryField, $rangeInfo);
+											  null, $countryField, $rangeInfo);
 		
 			// Sort all submissions by status, which is too complex to do in the DB
 			$submissionsArray = $submissions->toArray();
@@ -94,13 +93,13 @@ class ReviewerHandler extends Handler {
 			$submissions4 =& ArrayItemIterator::fromRangeInfo($submissionsArray, $rangeInfo);
 		}  else {
 			$submissions1 = $reviewerSubmissionDao->getReviewerSubmissionsByReviewerId($user->getId(), $journal->getId(), $active,  $searchField, $searchMatch, $search, $dateSearchField, $fromDate, $toDate, 
-											  $technicalUnitField, $countryField, $rangeInfo, $sort, $sortDirection);
+											  null, $countryField, $rangeInfo, $sort, $sortDirection);
 			$submissions2 = $reviewerSubmissionDao->getReviewerSubmissionsByReviewerId($user->getId(), $journal->getId(), $active,  $searchField, $searchMatch, $search, $dateSearchField, $fromDate, $toDate, 
-											  $technicalUnitField, $countryField, $rangeInfo, $sort, $sortDirection);
+											  null, $countryField, $rangeInfo, $sort, $sortDirection);
 			$submissions3 = $reviewerSubmissionDao->getReviewerSubmissionsByReviewerId($user->getId(), $journal->getId(), $active,  $searchField, $searchMatch, $search, $dateSearchField, $fromDate, $toDate, 
-											  $technicalUnitField, $countryField, $rangeInfo, $sort, $sortDirection);
+											  null, $countryField, $rangeInfo, $sort, $sortDirection);
 			$submissions4 = $reviewerSubmissionDao->getReviewerSubmissionsByReviewerId($user->getId(), $journal->getId(), $active,  $searchField, $searchMatch, $search, $dateSearchField, $fromDate, $toDate, 
-											  $technicalUnitField, $countryField, $rangeInfo, $sort, $sortDirection);
+											  null, $countryField, $rangeInfo, $sort, $sortDirection);
 											  
 		}
 
@@ -125,7 +124,7 @@ class ReviewerHandler extends Handler {
 		 * Added by:  Ayvee Mallare
 		 * Last Updated: Sept 25, 2011
          *********************************************************************/
-        $duplicateParameters = array(
+                $duplicateParameters = array(
 			'searchField', 'searchMatch', 'search',
 			'dateFromMonth', 'dateFromDay', 'dateFromYear',
 			'dateToMonth', 'dateToDay', 'dateToYear',
@@ -134,7 +133,7 @@ class ReviewerHandler extends Handler {
 		foreach ($duplicateParameters as $param)
 			$templateMgr->assign($param, Request::getUserVar($param));
                 
-        $templateMgr->assign('dateFrom', $fromDate);
+                $templateMgr->assign('dateFrom', $fromDate);
 		$templateMgr->assign('dateTo', $toDate);
 		$templateMgr->assign('fieldOptions', Array(
 			SUBMISSION_FIELD_TITLE => 'article.title',
@@ -145,13 +144,10 @@ class ReviewerHandler extends Handler {
 			SUBMISSION_FIELD_DATE_SUBMITTED => 'submissions.submitted',
 		));
 		
-		$technicalUnitDAO =& DAORegistry::getDAO('TechnicalUnitDAO');
-		$technicalUnits =& $technicalUnitDAO->getTechnicalUnits();
-        $countryDAO =& DAORegistry::getDAO('ProvincesOfVietnamDAO');
-        $countries =& $countryDAO->getProvincesOfVietnam();
-       
-		$templateMgr->assign_by_ref('technicalUnits', $technicalUnits);
-        $templateMgr->assign_by_ref('countries', $countries);
+                $countryDAO =& DAORegistry::getDAO('ProvincesOfVietnamDAO');
+                $countries =& $countryDAO->getProvincesOfVietnam();
+
+                $templateMgr->assign_by_ref('countries', $countries);
         
         
 		import('classes.issue.IssueAction');
@@ -161,7 +157,6 @@ class ReviewerHandler extends Handler {
 		$templateMgr->assign('sort', $sort);
 		$templateMgr->assign('sortDirection', $sortDirection);
 		// Added by igm 9/24/11
-		$templateMgr->assign('technicalUnitField', $technicalUnitField);
 		$templateMgr->assign('countryField', $countryField);
 		$templateMgr->display('reviewer/submissionsIndex.tpl');
 	}

@@ -376,8 +376,8 @@ class MetadataForm extends Form {
                 'riskLevel' => $article->getRiskLevel(null),
                 'listRisks' => $article->getListRisks(null),
                 'howRisksMinimized' => $article->getHowRisksMinimized(null),
-                'riskApplyTo' => $article->getRiskApplyTo(null),
-                'benefitsFromTheProject' => $article->getBenefitsFromTheProject(null),
+                'riskApplyTo' => $article->getRiskApplyTo('en_US'),
+                'benefitsFromTheProject' => $article->getBenefitsFromTheProject('en_US'),
                 'multiInstitutions' => $article->getMultiInstitutions(null)
 			);
                        

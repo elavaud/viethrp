@@ -706,7 +706,7 @@ class ReportsHandler extends Handler {
 					if ($submission->getRiskLevel($eng) != 'No more than minimal risk') $columns[$index] = $submission->getHowRisksMinimized($eng);
 					else $columns[$index] = Locale::translate('editor.reports.riskUnder');
 				} elseif ($index == 'riskApplyTo') {
-		        	$riskApplyToArray = $submission->getRiskApplyTo(null);
+		        	$riskApplyToArray = $submission->getRiskApplyTo('en_US');
         			$firstRisk = "0";
         			$riskApplyToString = '';
 					if ($riskApplyToArray[$eng][0] == '1') {
@@ -729,7 +729,7 @@ class ReportsHandler extends Handler {
 					}
 					$columns[$index] = $riskApplyToString;
 				} elseif ($index == 'benefitsFromTheProject') {
-		        	$benefitsArray = $submission->getBenefitsFromTheProject(null);
+		        	$benefitsArray = $submission->getBenefitsFromTheProject('en_US');
         			$firstBenefits = "0";
         			$benefitsString = '';
 					if ($benefitsArray[$eng][0] == '1') {

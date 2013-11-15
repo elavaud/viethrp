@@ -549,7 +549,7 @@ class SectionEditorSubmissionDAO extends DAO {
 			$sectionEditorId, $journalId, $sectionId,
 			$searchField, $searchMatch, $search,
 			$dateField, $dateFrom, $dateTo, $technicalUnitField, $countryField,
-			'a.status = ' . STATUS_QUEUED . ' AND e.can_review = 1 AND (edec.decision IS NULL OR edec.decision <> ' . SUBMISSION_EDITOR_DECISION_ACCEPT . ')',
+			'a.status = ' . STATUS_QUEUED . ' AND e.can_review = 1 ',
 			$rangeInfo, $sortBy, $sortDirection
 		);
 		$returner = new DAOResultFactory($result, $this, '_returnSectionEditorSubmissionFromRow');

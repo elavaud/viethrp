@@ -380,7 +380,7 @@ function checkSubmissionChecklist(elements) {
     <tr valign="top" id="riskApplyToField">
         <td class="label" width="20%">{translate key="proposal.riskApplyTo"}</td>
         <td class="value">
-        {assign var="riskApplyTo" value=$article->getRiskApplyTo(null)}
+        {assign var="riskApplyTo" value=$article->getRiskApplyTo('en_US')}
         {assign var="firstRisk" value="0"}
         {if $riskApplyTo[$eng][0] == '1'}
         	{if $firstRisk == '1'} & {/if}{translate key="proposal.researchTeam"}
@@ -403,7 +403,7 @@ function checkSubmissionChecklist(elements) {
     <tr valign="top" id="benefitsFromTheProjectField">
         <td class="label" width="20%">{translate key="proposal.benefitsFromTheProject"}</td>
         <td class="value">
-        {assign var="benefitsFrom" value=$article->getBenefitsFromTheProject()}
+        {assign var="benefitsFrom" value=$article->getBenefitsFromTheProject('en_US')}
         {assign var="firstBenefits" value="0"}
         {if $benefitsFrom[$eng][0] == '1'}
         	{if $firstBenefits == '1'} & {/if}{translate key="proposal.directBenefits"}

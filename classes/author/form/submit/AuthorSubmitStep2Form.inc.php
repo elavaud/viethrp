@@ -289,8 +289,8 @@ class AuthorSubmitStep2Form extends AuthorSubmitForm {
                 'riskLevel' => $article->getRiskLevel(null),
                 'listRisks' => $article->getListRisks(null),
                 'howRisksMinimized' => $article->getHowRisksMinimized(null),
-                'riskApplyTo' => $article->getRiskApplyTo(null),
-                'benefitsFromTheProject' => $article->getBenefitsFromTheProject(null),
+                'riskApplyTo' => $article->getRiskApplyTo('en_US'),
+                'benefitsFromTheProject' => $article->getBenefitsFromTheProject('en_US'),
                 'multiInstitutions' => $article->getMultiInstitutions(null)
 			);
                        
@@ -635,8 +635,8 @@ class AuthorSubmitStep2Form extends AuthorSubmitForm {
         $article->setRiskLevel($this->getData('riskLevel'), null);
         $article->setListRisks($this->getData('listRisks'), null);
         $article->setHowRisksMinimized($this->getData('howRisksMinimized'), null);
-        $article->setRiskApplyTo($this->getData('riskApplyTo'), null);               
-        $article->setBenefitsFromTheProject($this->getData('benefitsFromTheProject'), null);
+        $article->setRiskApplyTo($this->getData('riskApplyTo'), 'en_US');               
+        $article->setBenefitsFromTheProject($this->getData('benefitsFromTheProject'), 'en_US');
         
         $article->setMultiInstitutions($this->getData('multiInstitutions'), null);
         /***************** END OF EDIT *****************************/

@@ -146,7 +146,7 @@ $(document).ready(
 </form>
 
 <br/>
-<h4>{if $statusFilter == 1}{translate key="common.complete"}:<br/>{elseif $statusFilter == 2}{translate key="common.ongoing"}:<br/>{/if}{if $query}{translate key="help.searchResultsFor"} '{$query}' {else}{translate key="common.search"} {/if}{if $dateFrom != '--'}{ key="search.dateFrom"} {$dateFrom|date_format:$dateFormatLong} {/if}{if $dateFrom != '--' && $dateTo != '--'}{translate key="search.operator.and"} {/if}{if $dateTo != '--'}{translate key="search.dateTo"} {$dateTo|date_format:$dateFormatLong} {/if}{if $country}{translate key="search.takingPlaceIn"} {$country} {/if}: {$count} {translate key="search.results"}. </h4>
+<h4>{if $statusFilter == 1}{translate key="common.complete"}:<br/>{elseif $statusFilter == 2}{translate key="common.ongoing"}:<br/>{/if}{if $query}{translate key="help.searchResultsFor"} '{$query}' {else}{translate key="common.search"} {/if}{if $dateFrom != '--'}{translate key="search.dateFrom"} {$dateFrom|date_format:$dateFormatLong} {/if}{if $dateFrom != '--' && $dateTo != '--'}{translate key="search.operator.and"} {/if}{if $dateTo != '--'}{translate key="search.dateTo"} {$dateTo|date_format:$dateFormatLong} {/if}{if $country}{translate key="search.takingPlaceIn"} {$country} {/if}: {$count} {translate key="search.results"}. </h4>
 <div id="results">
 <table width="100%" class="listing">
 <tr class="heading" valign="bottom">
@@ -170,7 +170,7 @@ $(document).ready(
 	{if $result->getLocalizedPrimarySponsor() == "Other"}
 		{$result->getLocalizedOtherPrimarySponsor()}
 	{else}
-		{$result->getLocalizedPrimarySponsor()}
+		{$result->getLocalizedPrimarySponsorText()}
 	{/if}
 	</td>
 	<td>{$result->getLocalizedProposalCountryText()}</td>

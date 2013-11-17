@@ -274,7 +274,17 @@
 	<message key="about.hsph">Hội đồng đánh giá tổ chức trường Đại học y tế Công cộng Hà Nội</message>
 	<message key="about.researcherDirectory">Thư mục nhà nghiên cứu</message>
     <message key="about.sop">Thủ tục làm việc chuẩn</message>
-    <message key="about.investigatorUserguide">Hướng dẫn người dùng điều tra viên VNHRP</message>    
+    <message key="about.sopEn">Standard Operating Procedures - English</message>
+    <message key="about.sopVn">Standard Operating Procedures - Vietnamese</message>
+    <message key="about.investigatorUserguide">Hướng dẫn người dùng điều tra viên VNHRP</message>
+    <message key="about.investigatorUserguideEng">VNHRP User manual - Investigator - English</message>
+    <message key="about.reviewerUserguideEng">VNHRP User manual - Reviewer - English</message>
+    <message key="about.completeUserguideEng">VNHRP User manual - Complete - English</message>
+    <message key="about.investigatorUserguideVn">VNHRP User manual - Investigator - Vietnamese</message>
+    <message key="about.reviewerUserguideVn">VNHRP User manual - Reviewer - Vietnamese</message>
+    <message key="about.completeUserguideVn">VNHRP User manual - Complete - Vietnamese</message>
+    <message key="about.Userguides">VNHRP User manuals</message>
+
 	<message key="about.contact.subPrincipalContact">Thư ký trợ lý hành chính</message>        
 	<message key="common.actingAsUserGroup.userIsNotInTargetUserGroup">Quý vị không có trong nhóm người dùng này.</message>
 	<message key="common.disableEnable">Vô hiệu/Bật</message>        

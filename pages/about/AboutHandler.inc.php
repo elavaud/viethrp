@@ -33,7 +33,7 @@ class AboutHandler extends Handler {
 
 		$templateMgr =& TemplateManager::getManager();
 		$journalDao =& DAORegistry::getDAO('JournalDAO');
-		$journalPath = Request::getRequestedJournalPath();
+                $journalPath = Request::getRequestedJournalPath();
 
 		if ($journalPath != 'index' && $journalDao->journalExistsByPath($journalPath)) {
 			$journal =& Request::getJournal();
@@ -51,15 +51,33 @@ class AboutHandler extends Handler {
 					break;
 				} 
 			}
-			
-			// Hide membership if the payment method is not configured
+                        
+                        $roleDao =& DAORegistry::getDAO('RoleDAO');
+
+                        $user =& Request::getUser();
+                        $canSeeCompleteUserManual = false;
+                        $canSeeReviewerUserManual = false;                        
+                        if (isset($user)) {
+                            $userId = $user->getId();
+                            if (($roleDao->roleExists(4,$userId,1)) || ($roleDao->roleExists(4,$userId,16)) || ($roleDao->roleExists(4,$userId,256)) || ($roleDao->roleExists(4,$userId,512))){
+                                $canSeeCompleteUserManual = true;
+                                $canSeeReviewerUserManual = true;                        
+                            }
+                            if($roleDao->roleExists(4,$userId,4096)){
+                                $canSeeReviewerUserManual = true;                        
+                            }
+                        }
+			$templateMgr->assign('canSeeCompleteUserManual', $canSeeCompleteUserManual);
+			$templateMgr->assign('canSeeReviewerUserManual', $canSeeReviewerUserManual);
+
+                        // Hide membership if the payment method is not configured
 			import('classes.payment.ojs.OJSPaymentManager');
 			$paymentManager =& OJSPaymentManager::getManager();
 			$templateMgr->assign('paymentConfigured', $paymentManager->isConfigured());
 
 			$groupDao =& DAORegistry::getDAO('GroupDAO');
 			$groups =& $groupDao->getGroups(ASSOC_TYPE_JOURNAL, $journal->getId(), GROUP_CONTEXT_PEOPLE);
-
+                        
 			$templateMgr->assign_by_ref('peopleGroups', $groups);
 			$templateMgr->assign('helpTopicId', 'user.about');
 			$templateMgr->display('about/index.tpl');

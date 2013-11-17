@@ -15,19 +15,26 @@
 <locale name="en_US" full_name = "English">
 	<message key="about.aboutSite">About the Site</message>
     
-        <!-- Changed "Contact" by "Secretariat". EL April 3 2012-->
-        <message key="about.contact">The National Clinical Trial Ethics Review Committee</message>
-        <message key="about.hsph">The Hanoi School of Public Health Institutional Review Board</message>
-         <message key="about.researcherDirectory">Researcher' Directory</message>
-        <message key="about.sop">Standard Operating Procedures</message>
-        <message key="about.investigatorUserguide">VNHRP Investigator Userguide</message>
+    <message key="about.contact">The National Clinical Trial Ethics Review Committee</message>
+    <message key="about.hsph">The Hanoi School of Public Health Institutional Review Board</message>
+    <message key="about.researcherDirectory">Researcher' Directory</message>
+    <message key="about.sop">Standard Operating Procedures</message>
+    <message key="about.sopEn">Standard Operating Procedures - English</message>
+    <message key="about.sopVn">Standard Operating Procedures - Vietnamese</message>
+    <message key="about.investigatorUserguideEng">VNHRP User manual - Investigator - English</message>
+    <message key="about.reviewerUserguideEng">VNHRP User manual - Reviewer - English</message>
+    <message key="about.completeUserguideEng">VNHRP User manual - Complete - English</message>
+    <message key="about.investigatorUserguideVn">VNHRP User manual - Investigator - Vietnamese</message>
+    <message key="about.reviewerUserguideVn">VNHRP User manual - Reviewer - Vietnamese</message>
+    <message key="about.completeUserguideVn">VNHRP User manual - Complete - Vietnamese</message>
+    <message key="about.userguides">VNHRP User manuals</message>
         
 	<message key="about.contact.email">Email</message>
 	<message key="about.contact.fax">Fax</message>
 	<message key="about.contact.phone">Phone</message>
 
-        <message key="about.contact.principalContact">Secretary</message>
-        <message key="about.contact.subPrincipalContact">Secretary Administrative Assistant</message>
+    <message key="about.contact.principalContact">Secretary</message>
+    <message key="about.contact.subPrincipalContact">Secretary Administrative Assistant</message>
         
 	<message key="about.contact.supportContact">Support Contact</message>
 	<message key="about.other">Other</message>
@@ -330,7 +337,7 @@
 	<message key="icon.view.alt">View</message>
 	<message key="locale.primary">Primary locale</message>
 	<message key="locale.supported">Supported locales</message>
-	<message key="navigation.about">About ERC</message>
+	<message key="navigation.about">About</message>
 	<message key="navigation.browse">Browse</message>
 	<message key="navigation.browseByTitle">By Title</message>
 	<message key="navigation.dashboard">Dashboard</message>

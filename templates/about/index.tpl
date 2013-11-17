@@ -33,8 +33,30 @@
 <ul class="plain">
 
 {* "policie" page changed for SOP pdf by EL on April 10 2012*}
-<li>&#187; {*<a title="Standard Operating Procedures" href="/vnhrp/public/HSPH_form.pdf" target="_blank">*}{translate key="about.sop"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
-<li>&#187; {*<a title="Userguide for investigators" href="/vnhrp/public/FHRP_User_Guide.pdf" target="_blank">*}{translate key="about.investigatorUserguide"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
+<li>&#187; {*<a title="Userguide for investigators" href="/vnhrp/public/HSPH_form.pdf" target="_blank">*}{translate key="about.sopEn"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
+<li>&#187; {*<a title="Userguide for investigators" href="/vnhrp/public/HSPH_form.pdf" target="_blank">*}{translate key="about.sopVn"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
+</ul>
+</div>
+
+<div id="aboutPolicies">
+
+<h3>{translate key="about.userguides"}</h3>
+<ul class="plain">
+
+{* "policie" page changed for SOP pdf by EL on April 10 2012*}
+<li>&#187; <a title="Standard Operating Procedures" href="/vnhrp/public/VNHRP_Userguide_Investigator_eng.pdf" target="_blank"> {translate key="about.investigatorUserguideEng"}</a></li>
+<li>&#187; {*<a title="Standard Operating Procedures" href="/vnhrp/public/VNHRP_Userguide_Investigator_vn.pdf" target="_blank">*} {translate key="about.investigatorUserguideVn"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
+
+{if $canSeeReviewerUserManual}
+<li>&#187; <a title="Standard Operating Procedures" href="/vnhrp/public/VNHRP_Userguide_Reviewer_eng.pdf" target="_blank"> {translate key="about.reviewerUserguideEng"}</a></li>
+<li>&#187; {*<a title="Standard Operating Procedures" href="/vnhrp/public/VNHRP_Userguide_Reviewer_vn.pdf" target="_blank">*} {translate key="about.reviewerUserguideVn"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
+{/if}
+
+{if $canSeeCompleteUserManual}
+<li>&#187; <a title="Standard Operating Procedures" href="/vnhrp/public/VNHRP_Userguide_Complete_eng.pdf" target="_blank"> {translate key="about.completeUserguideEng"}</a></li>
+<li>&#187; {*<a title="Standard Operating Procedures" href="/vnhrp/public/VNHRP_Userguide_Complete_vn.pdf" target="_blank">*} {translate key="about.completeUserguideVn"} <i>({translate key="common.soonAvailable"})</i>{*</a>*}</li>
+{/if}
+
 </ul>
 </div>
 

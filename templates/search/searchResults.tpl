@@ -175,7 +175,7 @@ $(document).ready(
 	</td>
 	<td>{$result->getLocalizedProposalCountryText()}</td>
 	<td>{$result->getLocalizedResearchFieldText()}</td>
-	<td>{$result->getLocalizedStartDate()} {translate key="search.dateTo"} {$result->getLocalizedEndDate()}</td>
+	<td>{$result->getStartDate('en_US')} {translate key="search.dateTo"} {$result->getEndDate('en_US')}</td>
 	<td>{if $result->getStatus() == 11}{translate key="common.complete"}{else}{translate key="common.ongoing"}{/if}</td>
 </tr>
 <tr>

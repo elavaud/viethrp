@@ -79,9 +79,9 @@
 		<td width="40%">{if !$submission->getDeclined()}<a href="{url op="submission" path=$reviewId}" class="action">{/if}{$submission->getLocalizedTitle()|escape}{if !$submission->getDeclined()}</a>{/if}</td>
 		<td width="20%">
 			{if $submission->getCancelled()}
-				Canceled
+				{translate key="common.cancelled"}
 			{elseif $submission->getDeclined()}
-				Declined
+				{translate key="submissions.declined"}
 			{else}
 				{assign var=recommendation value=$submission->getRecommendation()}
 				{if $recommendation === '' || $recommendation === null}

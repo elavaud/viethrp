@@ -94,7 +94,7 @@
 				{if $submission->getDateConfirmed()!=null && !$submission->getDeclined()}
 				 	{$submission->getDateConfirmed()|date_format:$dateFormatLong}
 				{elseif $submission->getDeclined()}
-					<span class="disabled">Declined</span>
+					<span class="disabled">{translate key="submissions.declined"}</span>
 				{else}
 					&mdash;
 				{/if}

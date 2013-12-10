@@ -62,6 +62,7 @@
 	<message key="common.closeWindow">Đóng cửa sổ</message>
 	<message key="common.complete">Hoàn thành</message>
 	<message key="common.completed">Hoàn thành</message>
+	<message key="common.confirmed">Khẳng định</message>    
 	<message key="common.continue">Tiếp tục</message>
 	<message key="common.country">Quốc gia</message>
 	<message key="common.create">Tạo</message>

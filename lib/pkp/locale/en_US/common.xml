@@ -105,6 +105,7 @@
     <message key="common.comments">Comments</message>
 	<message key="common.complete">Complete</message>
 	<message key="common.completed">Completed</message>
+	<message key="common.confirmed">Confirmed</message>    
 	<message key="common.continue">Continue</message>
 	<message key="common.copy">Copy</message>
 	<message key="common.country">Country of usual residence</message>

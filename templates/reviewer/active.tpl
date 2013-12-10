@@ -70,7 +70,7 @@
 		<!-- <td width="5%">{sort_heading key="submissions.sec" sort="section"}</td> *} Commented out by MSB, Sept25,2011-->
 		<td width="55%">{sort_heading key="article.title" sort='title'}</td>
 		<td width="15%" align="right"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_heading key="submission.due" sort='dueDate'}</td>
-		<td width="15%" align="right"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />Confirmed</td>
+		<td width="15%" align="right"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{translate key="common.confirmed"}</td>
 		<td width="15%" align="right">{translate key="submission.recommendation"}</td>
 		
 		
